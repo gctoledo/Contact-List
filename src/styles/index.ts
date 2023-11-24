@@ -35,4 +35,11 @@ export const Input = styled.input`
   background-color: transparent;
 `
 
+export const Infos = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+`
+
 export default GlobalStyle
