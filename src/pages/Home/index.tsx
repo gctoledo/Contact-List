@@ -4,7 +4,7 @@ import Menu from '../../containers/Menu'
 const Home = () => {
   return (
     <>
-      <Menu />
+      <Menu showFilter />
       <ContactList />
     </>
   )

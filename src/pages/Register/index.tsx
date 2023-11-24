@@ -4,7 +4,7 @@ import Menu from '../../containers/Menu'
 const Register = () => {
   return (
     <>
-      <Menu />
+      <Menu showFilter={false} />
       <Form />
     </>
   )

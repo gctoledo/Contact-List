@@ -2,20 +2,24 @@ import styled from 'styled-components'
 import { ContentContainer } from '../../styles'
 import { Link } from 'react-router-dom'
 
+type ButtonProps = {
+  add: boolean
+}
+
 export const MenuContainer = styled(ContentContainer)`
   display: flex;
   justify-content: space-between;
   border-radius: 0px 0px 16px 16px;
   margin-bottom: 32px;
 `
-export const Button = styled(Link)`
-  font-size: 24px;
+export const Button = styled(Link)<ButtonProps>`
+  font-size: ${({ add }) => (add ? '24px' : '14px')};
   color: #fff;
   font-weight: bold;
   padding: 4px 12px;
   border: none;
   cursor: pointer;
-  border-radius: 50%;
-  background-color: #44bd32;
+  border-radius: ${({ add }) => (add ? '50%' : '10px')};
+  background-color: ${({ add }) => (add ? '#44BD32' : '#2F3640')};
   text-decoration: none;
 `
