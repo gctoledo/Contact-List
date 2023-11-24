@@ -69,9 +69,26 @@ const contactsSlice = createSlice({
       if (contactIndex >= 0) {
         state.itens[contactIndex] = action.payload
       }
+    },
+    add: (state, action: PayloadAction<Omit<Contact, 'id'>>) => {
+      const contactCheck = state.itens.find(
+        (contact) =>
+          contact.name.toLowerCase() === action.payload.name.toLowerCase()
+      )
+
+      if (contactCheck) {
+        alert('Contato já cadastrado!')
+      } else {
+        const lastContact = state.itens[state.itens.length - 1]
+        const newContact = {
+          ...action.payload,
+          id: lastContact ? lastContact.id + 1 : 1
+        }
+        state.itens.push(newContact)
+      }
     }
   }
 })
 
-export const { remove, edit } = contactsSlice.actions
+export const { remove, edit, add } = contactsSlice.actions
 export default contactsSlice.reducer
