@@ -5,10 +5,26 @@ import { ContactsContainer } from './styles'
 
 const ContactList = () => {
   const contacts = useSelector((state: RootReducer) => state.contacts.itens)
+  const { search } = useSelector((state: RootReducer) => state.filter)
+
+  const filterContacts = () => {
+    let filteredContacts = contacts
+
+    if (search !== undefined) {
+      filteredContacts = contacts.filter(
+        (contact) =>
+          contact.name.toLowerCase().search(search.toLowerCase()) >= 0
+      )
+    }
+
+    return filteredContacts
+  }
+
+  const filteredContacts = filterContacts()
 
   return (
     <ContactsContainer>
-      {contacts.map((contact) => (
+      {filteredContacts.map((contact) => (
         <Contact
           key={contact.id}
           email={contact.email}
