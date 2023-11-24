@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 import { ContentContainer } from '../../styles'
 
-type ButtonProps = {
-  types?: 'save' | 'cancel' | undefined
-}
-
 type ContactCardProps = {
   editing: string
 }
@@ -15,23 +11,6 @@ const contactCardStyle = (editing: string) => {
   } else {
     return '#fcfcfc'
   }
-}
-
-const setButtonColor = (types: string | undefined) => {
-  let color: string
-
-  switch (types) {
-    case 'save':
-      color = '#44BD32'
-      break
-    case 'cancel':
-      color = '#C23616'
-      break
-    default:
-      color = '#2F3640'
-      break
-  }
-  return color
 }
 
 export const ContactCard = styled(ContentContainer)<ContactCardProps>`
@@ -55,18 +34,6 @@ export const ContactCard = styled(ContentContainer)<ContactCardProps>`
 export const ActionBar = styled.div`
   display: flex;
   justify-content: center;
-`
-
-export const Button = styled.button<ButtonProps>`
-  font-size: 14px;
-  color: #fff;
-  font-weight: bold;
-  padding: 12px 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
-  background-color: ${({ types }: ButtonProps) => setButtonColor(types)};
-  margin-right: 8px;
 `
 
 export const Perfil = styled.div`

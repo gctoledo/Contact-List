@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
-import { Infos, Input } from '../../styles'
-import { ActionBar, Button, ContactCard, Perfil } from './styles'
+import { Button, Infos, Input } from '../../styles'
+import { ActionBar, ContactCard, Perfil } from './styles'
 import { remove, edit } from '../../store/reducers/contact'
 import { useState } from 'react'
 

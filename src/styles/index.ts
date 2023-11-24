@@ -1,4 +1,26 @@
 import styled, { createGlobalStyle } from 'styled-components'
+import variables from './variables'
+
+type ButtonProps = {
+  types?: 'save' | 'cancel' | undefined
+}
+
+const setButtonColor = (types: string | undefined) => {
+  let color: string
+
+  switch (types) {
+    case 'save':
+      color = variables.green
+      break
+    case 'cancel':
+      color = variables.red
+      break
+    default:
+      color = variables.default
+      break
+  }
+  return color
+}
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -40,6 +62,18 @@ export const Infos = styled.div`
   flex-direction: column;
   gap: 16px;
   width: 100%;
+`
+
+export const Button = styled.button<ButtonProps>`
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: ${({ types }: ButtonProps) => setButtonColor(types)};
+  margin-right: 8px;
 `
 
 export default GlobalStyle

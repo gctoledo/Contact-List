@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { ContentContainer } from '../../styles'
 import { Link } from 'react-router-dom'
+import variables from '../../styles/variables'
 
 type ButtonProps = {
   add: boolean
@@ -20,6 +21,6 @@ export const Button = styled(Link)<ButtonProps>`
   border: none;
   cursor: pointer;
   border-radius: ${({ add }) => (add ? '50%' : '10px')};
-  background-color: ${({ add }) => (add ? '#44BD32' : '#2F3640')};
+  background-color: ${({ add }) => (add ? variables.green : variables.default)};
   text-decoration: none;
 `

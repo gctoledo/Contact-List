@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { Input } from '../../styles'
-import { Button } from '../../components/Contact/styles'
+import { Button, Input } from '../../styles'
 
 export const AddInput = styled(Input)`
   border: 1px solid #000;
