@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { ContentContainer } from '../../styles'
 
 type ButtonProps = {
-  types: 'save' | 'edit' | 'cancel'
+  types?: 'save' | 'cancel' | undefined
 }
 
 type ContactCardProps = {
@@ -17,7 +17,7 @@ const contactCardStyle = (editing: string) => {
   }
 }
 
-const setButtonColor = (types: string) => {
+const setButtonColor = (types: string | undefined) => {
   let color: string
 
   switch (types) {
@@ -48,14 +48,8 @@ export const ContactCard = styled(ContentContainer)<ContactCardProps>`
   transition: 0.5s ease all;
   img {
     height: 160px;
+    border-radius: 50%;
   }
-`
-
-export const Infos = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
 `
 
 export const ActionBar = styled.div`

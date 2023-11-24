@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
-import { Input } from '../../styles'
-import { ActionBar, Button, ContactCard, Infos, Perfil } from './styles'
+import { Infos, Input } from '../../styles'
+import { ActionBar, Button, ContactCard, Perfil } from './styles'
 import { remove, edit } from '../../store/reducers/contact'
 import { useState } from 'react'
 
@@ -82,7 +82,7 @@ const Contact = ({
         </ActionBar>
       ) : (
         <ActionBar>
-          <Button type="button" types="edit" onClick={() => setEditing(true)}>
+          <Button type="button" onClick={() => setEditing(true)}>
             Editar
           </Button>
           <Button
